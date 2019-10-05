@@ -9,80 +9,110 @@
                 Admin
                 <small>Subheading</small>
             </h1>
-            <?php
-     if(isset($_POST['submit'])){
-//            $user = new User();
-//            
-//            $user->username = $_POST['username'];
-//            $user->password = $_POST['password'];
-//            $user->firstname = $_POST['firstname'];
-//            $user->lastname = $_POST['lastname'];
-//            
-//            $user->create();
-               
-       
-//          $photo = new Photo();
-//          $photo->title = $_POST['username'];
-//          $photo->size = $_POST['password'];     
-//           
-//         
-//         $photo->save();
-//         echo SITE_ROOT;
-       
-     }
-           //   $users = User::find_all_users();
-           // foreach($users as $user)
-           // {
-           //     echo $user->username . "<br>";    
-           // }
-        // $user = User::find_by_id(5);
 
-        // echo $user->username;
-           
-             ?>
-         
-
-        
-<!--
-<div class="col-md-4 col-md-offset-3">
-
- 
-	
-<form   action="" method="post" auto-complete="off">
-	 
-<div class="form-group">
-	<label for="username">Username</label>
-	<input type="text" class="form-control" name="username"   >
-
-</div>
-
-<div class="form-group">
-	<label for="password">Password</label>
-	<input type="password" class="form-control" name="password" value=" ">
-	
-</div>
-<div class="form-group">
-	<label for="username">First Name</label>
-	<input type="text" class="form-control" name="firstname" value="  " >
-
-</div>
-    <div class="form-group">
-	<label for="username">Last Name</label>
-	<input type="text" class="form-control" name="lastname" value=" " >
-
-</div>
-
-<div class="form-group">
-<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-
-</div>
-
-
-</form>
-
-
+        </div>
+            
     </div>
-      
--->
+      <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-users fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"><?php echo $session->count; ?></div>
+                                        <div>New Views</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                  <span class="pull-left">View Details</span> 
+                               <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span> 
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-photo fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"><?php echo Photo::count_all(); ?></div>
+                                        <div>Photos</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Total Photos in Gallery</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                     <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-user fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"><?php echo User::count_all(); ?>
+
+                                        </div>
+
+                                        <div>Users</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Total Users</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                      <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"><?php echo Comment::count_all(); ?></div>
+                                        <div>Comments</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Total Comments</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+              </div> <!--First Row-->
+              <div class="row">
+                <div id="piechart" style="width: 900px; height: 500px;"></div>
+              </div>
+</div>
 
  

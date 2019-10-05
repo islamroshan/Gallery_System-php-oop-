@@ -39,7 +39,16 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <?php include("includes/admin_content.php"); ?>
+      <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Admin
+                <small>Subheading</small>
+            </h1>
+
+        </div>
+            
+    </div>
         <!-- /.row -->
         <div class="col-md-6">
             <h1><?php echo $message; ?></h1>
