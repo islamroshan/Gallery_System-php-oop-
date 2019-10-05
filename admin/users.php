@@ -25,8 +25,10 @@
             <h1 class="page-header">
                 Admin
                 <small>Subheading</small>
-            </h1>
 
+            </h1>
+        
+            <p class="bg-success"> <?php echo $session->message; ?> </p>
         </div>
             
     </div>

@@ -11,6 +11,11 @@ class Comment extends DB_Object  {
         public $author;
         public $body;
 
+
+        public static function delete_comment()
+        {
+            
+        }
         public static  function create_comment($photo_id ,$author="jhon",$body="")
         {
             if(!empty($photo_id) && !empty($author) && !empty($body))   {

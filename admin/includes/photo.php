@@ -99,6 +99,19 @@ class Photo  extends DB_Object
             return false;
         }
     }
+// down wala  method modal ka jo side bar ha waha pa image ka data show kare ga
+    public static  function display_sidebar_data($photo_id)
+    {
+        $photo = Photo::find_by_id($photo_id);
+
+        $output = "<a class='thumbnail' href='#'><img width='100' src='{$photo->photo_path()}' ></a>";
+        $output .= "<p>{$photo->filename}</p>";
+        $output .= "<p>{$photo->type}</p>";
+        $output .= "<p>{$photo->size}</p>";
+
+        echo $output;
+
+    }
 }
 
 ?>

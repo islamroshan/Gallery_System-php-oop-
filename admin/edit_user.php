@@ -1,5 +1,7 @@
 <?php require_once("includes/header.php"); ?>
- 
+<?php include("includes/photo_library_modal.php"); ?>
+
+
 <?php if(!$session->is_signed_in()) {  header("Location: login.php"); } ?>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -18,6 +20,7 @@
 </nav>
 <?php
 $message = "";
+
 	if(empty($_GET['id'])){
 		header("Location: users.php");
 	}
@@ -32,20 +35,27 @@ $message = "";
 
          if(empty($_FILES['user_image']))
          {
-            $user->save();
+    
+             $user->save();
+             header("Location: users.php ");
+             $session->message('The User Has Been Updated');
          }
          else {
+            
             $user->set_files($_FILES['user_image']);
             $user->save_user_and_image();
             $user->save();
+            $session->message('The User Has Been Updated');
+            // header("Location: edit_user.php?id={$user->id}");
+              header("Location: users.php ");
 
-            header("Location: edit_user.php?id={$user->id}");
          }
 
  }
 
 
 ?>
+
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -60,10 +70,12 @@ $message = "";
     <!-- /.container-fluid -->
         <form method="post" enctype="multipart/form-data">
             <h1><?php echo $message; ?></h1>
-    <div class="col-md-4">
+    <div class="col-md-4 user_image_box">
         <div class="form-group">
                 <label>User Image</label>
+            <a href="#" data-toggle="modal" data-target="#photo-library">
                 <img   class="img-thumbnail img-responsive" src= "<?php echo $user->user_pic_path(); ?>">
+            </a>
         </div>
     </div>
     <div class="col-md-8" >
@@ -88,7 +100,7 @@ $message = "";
     			<label>Last Name</label>
     			<input class="form-control" type="text"  value="<?php echo $user->lastname ; ?>"  name="lastname" >
     		</div>
-    		 
+    		 <a id="user-id" href="delete_user.php?id=<?php echo $user->id;?>"><button  name="delete"  class="btn btn-denger btn-lg ">Delete</button></a>
     		<a><button  name="update" type="submit" class="btn btn-primary btn-lg ">Update</button></a>
     		 
     	 </form>     

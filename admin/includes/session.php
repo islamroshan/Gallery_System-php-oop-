@@ -11,8 +11,10 @@ class Session
     {
         session_start();
         $this->check_the_login();
-        $this->check_message();
+        
         $this->visitor_count();
+        $this->check_message();
+   
     }
     public function visitor_count()
     {
@@ -27,7 +29,7 @@ class Session
     {
         if(!empty($msg))
         {
-            $_SESSION['$message'] = $msg;
+            $_SESSION['message'] = $msg;
         } else {
             return $this->message;
         }

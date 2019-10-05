@@ -11,9 +11,11 @@
  $user = User::find_by_id($_GET['id']);
  if($user)
  {
+ 	$session->message('The User Has Been Deleted');
  	$user->delete_user();
  	header("Location: users.php");
  }else {
+ 	$session->message('The User Has Been Deleted');
  	header("Location: users.php");
  }
 
