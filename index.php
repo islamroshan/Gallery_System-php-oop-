@@ -1,30 +1,21 @@
-<?php include("includes/header.php"); ?>
+<?php require_once("includes/header.php"); ?>
 
 
         <div class="row">
 
             <!-- Blog Entries Column -->
-            <div class="col-md-8">
-
-    
-            
-          
-         
-
+            <div class="col-md-12">
+                <div class="thumbnail row">
+                    <div class="col-xs-6 col-md-3">
+                        <a class="thumbnail" href="">
+                           <img src="" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
 
 
 
-
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-
-            
-                 <?php include("includes/sidebar.php"); ?>
-
-
-
-        </div>
-        <!-- /.row -->
+ 
 
         <?php include("includes/footer.php"); ?>
