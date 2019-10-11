@@ -3,11 +3,13 @@
 class Photo  extends DB_Object
 {
         protected static $db_table = "photos";
-        protected static $db_table_field = array('id','title','description','filename','type','size');
+        protected static $db_table_field = array('id','title','caption','description','alternate_text','filename','type','size');
     
         public $id;
         public $title;
+        public $caption;
         public $description;
+        public $alternate_text;
         public $filename;
         public $type;
         public $size;
@@ -96,6 +98,19 @@ class Photo  extends DB_Object
         } else {
             return false;
         }
+    }
+// down wala  method modal ka jo side bar ha waha pa image ka data show kare ga
+    public static  function display_sidebar_data($photo_id)
+    {
+        $photo = Photo::find_by_id($photo_id);
+
+        $output = "<a class='thumbnail' href='#'><img width='100' src='{$photo->photo_path()}' ></a>";
+        $output .= "<p>{$photo->filename}</p>";
+        $output .= "<p>{$photo->type}</p>";
+        $output .= "<p>{$photo->size}</p>";
+
+        echo $output;
+
     }
 }
 

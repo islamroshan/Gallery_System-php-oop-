@@ -1,4 +1,5 @@
-<?php require_once("includes/header.php"); ?>
+  <?php require_once("includes/header.php"); ?>  
+ 
 <?php 
 
 if($session->is_signed_in()){
@@ -26,7 +27,18 @@ if(isset($_POST['submit'])) {
     $username = "";
 }
 ?>
+<div id="page-wrapper">
+  <div class="row">
+    
+  
+<div class="col-lg-12">
+            <h1 class="page-header">
+                Login with your account
+                
+            </h1>
 
+  </div>
+ 
 <div class="col-md-4 col-md-offset-3">
 
  
@@ -54,5 +66,7 @@ if(isset($_POST['submit'])) {
 
 </form>
 
-
 </div>
+</div>
+ 
+ 

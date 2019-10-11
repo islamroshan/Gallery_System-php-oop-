@@ -12,6 +12,7 @@
  if($photo)
  {
  	$photo->delete_photo();
+ 	$session->message('The photo of  is deleted');
  	header("Location: photo.php");
  }else {
  	header("Location: photo.php");

@@ -141,6 +141,16 @@ class DB_Object
         {
             return isset($this->id) ? $this->update() : $this->create();
         }
+        public static function count_all()
+        {
+            global $database;
+
+            $sql = "SELECT COUNT(*) FROM " . static::$db_table;
+            $result_set =$database->query($sql);
+            $row = mysqli_fetch_assoc($result_set);
+                    //my array_shift will cout number of rows only 
+            return array_shift($row);
+        }
 }
 
 ?>
