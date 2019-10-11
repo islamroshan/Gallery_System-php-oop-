@@ -9,11 +9,11 @@
     <?php 
     $message = "";
     
-    if(isset($_POST['submit']))
+    if(isset($_FILES['file']))
     {
         $photo = new Photo();
         $photo->title = $_POST['title'];
-        $photo->set_files($_FILES['file_upload']);
+        $photo->set_files($_FILES['file']);
         
         if($photo->save()) 
         {
@@ -50,18 +50,26 @@
             
     </div>
         <!-- /.row -->
-        <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
             <h1><?php echo $message; ?></h1>
-        <form action="upload.php"  method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label>Title</label>
-                <input type="text" class="form-control" name="title">
-            </div> 
-            <div class="form-group">
-                <input type="file" class="form-control" name="file_upload">
+            <form action="upload.php"  method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" name="title">
+                </div> 
+                <div class="form-group">
+                    <input type="file" class="form-control" name="file">
+                </div>
+                <input type="submit" name="file">
+            </form>
+             </div>
+        </div>
+
+        <div class="row">
+              <div class="col-md-6">
+                <form action="upload.php" class="dropzone"></form>
             </div>
-            <input type="submit" name="submit">
-        </form>
         </div>
     </div>
     <!-- /.container-fluid -->

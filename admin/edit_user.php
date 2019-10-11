@@ -43,8 +43,8 @@ $message = "";
          else {
             
             $user->set_files($_FILES['user_image']);
-            $user->save_user_and_image();
-            $user->save();
+            $user->upload_image();
+             $user->save();
             $session->message('The User Has Been Updated');
             // header("Location: edit_user.php?id={$user->id}");
               header("Location: users.php ");
@@ -100,7 +100,8 @@ $message = "";
     			<label>Last Name</label>
     			<input class="form-control" type="text"  value="<?php echo $user->lastname ; ?>"  name="lastname" >
     		</div>
-    		 <a id="user-id" href="delete_user.php?id=<?php echo $user->id;?>"><button  name="delete"  class="btn btn-denger btn-lg ">Delete</button></a>
+    		 <a id="user-id" href="delete_user.php?id=<?php echo $user->id;?>" ><button  type="button"  class="btn btn-denger btn-lg ">Delete</button></a>
+             
     		<a><button  name="update" type="submit" class="btn btn-primary btn-lg ">Update</button></a>
     		 
     	 </form>     

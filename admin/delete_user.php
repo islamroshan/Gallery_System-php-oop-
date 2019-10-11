@@ -13,10 +13,10 @@
  {
  	$session->message('The User Has Been Deleted');
  	$user->delete_user();
- 	header("Location: users.php");
+ 	header("Location: photo.php");
  }else {
  	$session->message('The User Has Been Deleted');
- 	header("Location: users.php");
+ 	header("Location: photo.php");
  }
 
  ?>

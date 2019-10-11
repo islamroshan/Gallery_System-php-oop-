@@ -17,6 +17,9 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+
+    <!-- Dropzone CSS -->
+    <link href="css/dropzone.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
@@ -34,6 +37,6 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
-<body>
+<body >
 
     <div id="wrapper">

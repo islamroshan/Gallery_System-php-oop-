@@ -31,19 +31,26 @@ if($user){
 		$user->lastname = $_POST['lastname'];
 
 		$user->set_files($_FILES['user_image']);
-
-		if($user->save_user_and_image()) 
-        {
-            $message = "Photo uploaded Sucessfully";
-        }
-		
+        $session->message('The user was added successfully');
+		$user->upload_image();
+        
+         $user->save();
+          header("Location:users.php");
+        	
  }
  }
 
 
 ?>
 <div id="page-wrapper">
-    <?php include("includes/admin_content.php"); ?>
+    <div class="row">
+   <div class="col-lg-12">
+            <h1 class="page-header">
+                Admin
+                <small>Subheading</small>
+            </h1>
+
+        </div>
     <!-- /.container-fluid -->
 
     <div class="col-md-8" >
@@ -76,7 +83,7 @@ if($user){
     		 
     	 </form>     
     </div>
- 
+ </div>
  
 </div>
 <!-- /#page-wrapper -->

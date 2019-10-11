@@ -61,7 +61,16 @@ $("#set_user_image").click(function(){
 	});
 
 });
+// Code for dropdown
+$(".info-box-header").click(function(){
 
+$(".inside").slideToggle("fast");
+$("#toggle").toggleClass("glyphicon glyphicon-menu-down , glyphicon glyphicon-menu-up ");
+
+});
+$(".delete_link").click(function(){
+	return confirm("Are you sure to delete this");
+});
  tinymce.init({selector:'textarea'}); 
 });
 

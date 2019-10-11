@@ -25,16 +25,7 @@ class User extends DB_Object
         {
             return $this->upload_directory.DS.$this->user_image;
         }
-        public function delete_user()
-       {
-        if($this->delete())
-        {
-            $target_path =   $this->image_path_and_placeholder();
-            return unlink($target_path) ? true : false;
-        } else {
-            return false;
-        }
-        }
+      
     
     public function set_files($file)
     {
@@ -53,7 +44,7 @@ class User extends DB_Object
             $this->size = $file['size'];
         }
     }
-    public function save_user_and_image()
+    public function upload_image()
     {
         
             if(!empty($this->errors))
@@ -65,7 +56,7 @@ class User extends DB_Object
                 $this->errors[] = "The File was not available";
                 return false;
             }
-            $target_path =   $this->upload_directory . DS . $this->user_image;
+            $target_path  =   $this->upload_directory . DS . $this->user_image;
             
             if(file_exists($target_path)) 
             {
@@ -115,21 +106,18 @@ class User extends DB_Object
             $sql .= " WHERE id =  {$this->id} ";
             $update_image =    $database->query($sql);
 
-            echo $this->image_path_and_placeholder();
-
-          
-
-
-       
+            echo $this->image_path_and_placeholder();  
       
     }
-        
- 
- 
-   
-
-    
-
-     
-}
+      public function delete_user()
+       {
+        if($this->delete())
+        {
+            $target_path =  $this->user_pic_path();
+            return unlink($target_path) ? true : false;
+        } else {
+            return false;
+        }
+        }
+ }
 ?>

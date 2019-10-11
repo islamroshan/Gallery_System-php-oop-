@@ -103,7 +103,7 @@ if(empty($_GET['id']))
        
       <div class="info-box-footer clearfix">
         <div class="info-box-delete pull-left">
-            <a  href="delete_photo.php?id=<?php echo $photo->id; ?>" class="btn btn-danger btn-lg ">Delete</a>   
+            <a  href="delete_user.php?id=<?php echo $photo->id; ?>" class="btn btn-danger btn-lg ">Delete</a>   
         </div>
        
         <div class="info-box-update pull-right ">
